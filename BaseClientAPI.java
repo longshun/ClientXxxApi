@@ -19,7 +19,7 @@ public class BaseClientAPI implements Callback {
     private ClientCallBack callBack;
 
 	/*默认的actionId，可以自己设定*/
-    private static final int DEFAULT_ACTION_ID = -100000000;
+    private static final int DEFAULT_ACTION_ID = Integer.MAX_VALUE;;
     private int actionId = DEFAULT_ACTION_ID;
 
     protected BaseClientAPI(ClientCallBack callBack) {
@@ -44,7 +44,7 @@ public class BaseClientAPI implements Callback {
         ClientResult result = new ClientResult();
         result.actionId = this.actionId;
         if (result.actionId == DEFAULT_ACTION_ID) {
-            throw new RuntimeException("don't set actionId -100000000 or you should setActionId in BaseClientApi child class!");
+            throw new RuntimeException("don't set actionId Integer.MAX_VALUE; or you should setActionId in BaseClientApi child class!");
         } else {
             if (response.isSuccessful()) {
                 result.data = response.body().string();
