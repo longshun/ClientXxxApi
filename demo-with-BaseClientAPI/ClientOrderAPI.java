@@ -11,6 +11,7 @@ import java.util.HashMap;
 /**
  * Created by longShun on 2016/10/19.
  * 订单相关网络操作 引入BaseClientAPI
+ * 注意：每进行一次方法调用都需要new ClientOrderAPI
  */
 public class ClientOrderAPI extends BaseClientAPI {
 

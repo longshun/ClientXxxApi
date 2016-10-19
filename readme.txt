@@ -1,3 +1,20 @@
-1.ÍøÂç¿ò¼Ü£ºÎÒÊ¹ÓÃµÄÊÇokHttp£»¿ÉÒÔ¸ù¾İ×Ô¼ºµÄĞèÇóÑ¡ÔñÍøÂç¿ò¼Ü¡£
-2.ÀïÃæµÄdemo½ö¹©²Î¿¼´úÂëµÄĞ´·¨£¬Ö±½Ó¿½±´Ê¹ÓÃ²»ÁË£¬ĞèÒª¸ù¾İ×Ô¼ºµÄÒµÎñÂß¼­½øĞĞĞŞ¸Ä£»
-3.okHttpµ¼Èë·½Ê½£ºapp-¡·build.gradle-¡·dependencies-¡·compile 'com.squareup.okhttp:okhttp:2.4.0'£»
+ï»¿1.ç½‘ç»œæ¡†æ¶ï¼šæˆ‘ä½¿ç”¨çš„æ˜¯okHttpï¼›å¯ä»¥æ ¹æ®è‡ªå·±çš„éœ€æ±‚é€‰æ‹©ç½‘ç»œæ¡†æ¶ã€‚
+2.é‡Œé¢çš„demoä»…ä¾›å‚è€ƒä»£ç çš„å†™æ³•ï¼Œç›´æ¥æ‹·è´ä½¿ç”¨ä¸äº†ï¼Œéœ€è¦æ ¹æ®è‡ªå·±çš„ä¸šåŠ¡é€»è¾‘è¿›è¡Œä¿®æ”¹ï¼›
+3.okHttpå¯¼å…¥æ–¹å¼ï¼šapp-ã€‹build.gradle-ã€‹dependencies-ã€‹compile 'com.squareup.okhttp:okhttp:2.4.0'ï¼›
+4.æ³¨æ„ï¼šæ¯è¿›è¡Œä¸€æ¬¡æ–¹æ³•è°ƒç”¨éƒ½éœ€è¦new ä¸€ä¸ªClientXxxAPIï¼›
+5.Activityä¸­ä½¿ç”¨æ–¹å¼ï¼š
+	private void loadServerCategoryList() {
+        ClientMyAPI xxxAPI = new ClientXxxAPI(this);
+        xxxAPI.æ–¹æ³•1(å‚æ•°);
+		ClientMyAPI xxxAPI = new ClientXxxAPI(this);
+        xxxAPI.æ–¹æ³•2(å‚æ•°);
+    }
+
+    @Override
+    public void onTaskFinished(ClientResult clientResult) {
+        switch (clientResult.actionId){
+            case ClientXxxAPI.ACTION_XXX:
+                //todo deal with clientResult.data;
+                break;
+        }
+    }

@@ -23,6 +23,7 @@ import java.util.List;
 /**
  * Created by longShun on 2016/10/14.
  * “我的”模块相关的网络操作 没有引入BaseClientAPI
+ * 注意：每进行一次方法调用都需要new 一个ClientMyAPI；
  */
 public class ClientMyAPI implements Callback {
 
