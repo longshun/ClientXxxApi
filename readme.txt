@@ -3,7 +3,7 @@
 3.okHttp导入方式：app-》build.gradle-》dependencies-》compile 'com.squareup.okhttp:okhttp:2.4.0'；
 4.注意：每进行一次方法调用都需要new 一个ClientXxxAPI；
 5.Activity中使用方式：
-	private void loadServerCategoryList() {
+	private void loadServerData() {
         ClientMyAPI xxxAPI = new ClientXxxAPI(this);
         xxxAPI.方法1(参数);
 		ClientMyAPI xxxAPI = new ClientXxxAPI(this);
