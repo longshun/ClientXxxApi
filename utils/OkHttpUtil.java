@@ -56,7 +56,25 @@ public class OkHttpUtil {
         Request request = new Request.Builder().url(url).build();
         enqueue(request, callback);
     }
+	
+	
+	/**
+     * 为post请求,参数为xml格式数据
+     */
+	public static void doPost(String url, String xml, Callback callback) {
+        MediaType MEDIA_TYPE_XML = MediaType.parse("text/xml; charset=utf-8");
+        Request request = new Request.Builder().url(url).post(RequestBody.create(MEDIA_TYPE_XML, xml)).build();
+        mOkHttpClient.newCall(request).enqueue(callback);
+    }
 
+	/**
+     * 为post请求,builder
+     */
+	public static void doPost(String url, FormEncodingBuilder builder, Callback callback){
+        Request request = new Request.Builder().url(url).post(builder.build()).build();
+        mOkHttpClient.newCall(request).enqueue(callback);
+    }
+	
     /**
      * 为get请求添加一个参数，返回带参数的地址
      */
